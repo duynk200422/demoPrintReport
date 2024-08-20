@@ -1,0 +1,150 @@
+<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+<head>
+        <link name="Times New Roman" type="font" subtype="truetype"
+              src="https://5582676.app.netsuite.com/core/media/media.nl?id=5132&amp;c=5582676&amp;h=81f7c2662cfeb8a0195b&amp;_xt=.ttf"
+              src-bold="https://5582676.app.netsuite.com/core/media/media.nl?id=5133&amp;c=5582676&amp;h=e351d36d63a4f96ae296&amp;_xt=.ttf"
+              src-italic="https://5582676.app.netsuite.com/core/media/media.nl?id=5134&amp;c=5582676&amp;h=342be0afb205333c2eb8&amp;_xt=.ttf"
+              src-bolditalic="https://5582676.app.netsuite.com/core/media/media.nl?id=5135&amp;c=5582676&amp;h=4503ab61c49875386727&amp;_xt=.ttf"
+              bytes="2"/>
+          <style>
+            body {
+                font-size: 11pt;
+                font-family: Times New Roman;
+            }
+            table {
+                width: 100%;
+                table-layout: fixed;
+            }
+          .footer {
+                font-size: 10pt;
+                align: center;
+                /*font-weight: bold;*/
+            }
+            </style>
+  <macrolist>
+            <macro id="nlfooter">
+                <table class="footer">
+                    <tr>
+                        <td style = "font-size :11pt;" align = "left"   ></td> 
+                        <td  style = "font-size :11pt;" align = "center" ></td>
+                        <td  style = "font-size :11pt;" align = "right"  >${jsonData.vietnam_time}</td>
+                    </tr>
+                </table>
+            </macro>
+        </macrolist>
+</head>
+    <body footer ="nlfooter" footer-height = "20pt" padding="1cm 1cm 1cm 1cm"  size="A4-LANDSCAPE">
+      <table  width ="100%" >
+          <tr>
+                <td align="left"  width ="100%">
+                    <p><i>Phụ lục 2 - Quy trình mua hàng nội địa - Lần ban hành 07</i></p>
+                  </td>
+          </tr>
+      </table>
+   <table  width ="100%" padding-top="20px" >
+          <tr >
+
+             <td align="center"  width ="5%">
+             <#if companyInformation.logoUrl?length != 0><@filecabinet nstype="image" src="${companyInformation.logoUrl}" width = "40px" height = "55px"/></#if>
+        </td>
+                <td align="left"  width ="70%">
+                    <p><b>${jsonData.bu_legal_name}</b></p></td>
+                <td align="left"  width ="25%">
+                    <p><b>Mã số: PM9005C</b></p>
+                    <p padding-top="-10px" ><b>Lần BH: 01</b></p>
+                     <p padding-top="-10px"><b>Ngày BH: 01/07/2024</b></p>
+                    </td>
+            </tr>
+    </table>
+
+    <table  width ="100%">
+        <tr>
+            <td font-weigh="700" font-size="20px" align ="center" padding-top="10px">
+                <p style="text-align: center; color: #003366">
+                  <b>ĐƠN ĐẶT HÀNG</b>
+              </p>
+            </td>
+        </tr>
+        <tr>
+            <td align ="right"><p><b>P.O No.: ${jsonData.tranid}</b></p></td>
+        </tr>
+    </table>
+         <table  width ="100%">
+        <tr>
+            <td align ="left" width="100%"><p><b>Nhà Cung Cấp: ${jsonData.legal_name?html}</b></p></td>
+        </tr>
+             <tr>
+            <td align ="left" width="100%"><p><b>Địa chỉ: ${jsonData.defaultaddress?html}</b></p></td>
+        </tr>
+               <tr>
+            <td align ="left" width="100%"><p><b>Tel/Fax: ${jsonData.phone_no}</b></p></td>
+        </tr>
+               </table>
+    <table  width ="100%" padding-top="10px" align = 'middle'>
+        <tr>
+  <td width="5%"  align="center" border ="0.1pt solid black" vertical-align= 'middle' rowspan="2" > <p style="text-align: center; "><b>STT</b></p></td>
+ <td width="12%"  align="center" border ="0.1pt solid black" vertical-align= 'middle' rowspan="2" > <p style="text-align: center;"><b>MÃ HH</b></p></td>
+    <td width="22%"  align="center" border ="0.1pt solid black" vertical-align= 'middle' rowspan="2" > <p style="text-align: center;"><b>TÊN HÀNG HÓA</b></p></td>
+    <td width="12%" align="center" border ="0.1pt solid black" vertical-align= 'middle' rowspan="2"> <p style="text-align: center;"><b>Mã Kho</b></p></td>
+    <td width="12%" align="center" border ="0.1pt solid black" vertical-align= 'middle' rowspan="2" ><p style="text-align: center;"><b>ĐVT</b></p></td>
+              <td width="8%" align="center" border ="0.1pt solid black" vertical-align= 'middle' rowspan="2" ><p style="text-align: center;"><b>SỐ LƯỢNG</b></p></td>
+              <td width="14%" align="center" border ="0.1pt solid black" vertical-align= 'middle' rowspan="2" ><p style="text-align: center;"><b>GIÁ ĐƠN VỊ VNĐ</b></p></td>
+              <td width="15%" align="center" border ="0.1pt solid black" vertical-align= 'middle' rowspan="2" ><p style="text-align: center;"><b>THÀNH TIỀN</b></p></td>
+    </tr>
+          </table>
+      <table  width ="100%"  align = 'middle'>
+               <#list jsonData.arrLine as data>
+      <tr>
+  <td width="5%"  align="center" border ="0.1pt solid black" vertical-align= 'middle' > <p style="text-align: center; ">${data.line_no}</p></td>
+ <td width="12%"  align="center" border ="0.1pt solid black" vertical-align= 'middle' > <p style="text-align: center;">${data.tc_item_code}</p></td>
+    <td width="22%"  align="left" border ="0.1pt solid black" vertical-align= 'middle'> <p style="text-align: center;">${data.description?html}</p></td>
+    <td width="12%" align="center" border ="0.1pt solid black" vertical-align= 'middle'> <p style="text-align: center;">${data.loc_addrcode}</p></td>
+    <td width="12%" align="center" border ="0.1pt solid black" vertical-align= 'middle'  ><p style="text-align: center;">${data.units}</p></td>
+         <td width="8%"  align="center" border ="0.1pt solid black" vertical-align= 'middle' > <p style="text-align: center; ">${data.quantity}</p></td>
+         <td width="14%"  align="right" border ="0.1pt solid black" vertical-align= 'middle' > <p style="text-align: center; ">${data.giatri_dv}</p></td>
+         <td width="15%"  align="right" border ="0.1pt solid black" vertical-align= 'middle' > <p style="text-align: center; ">${data.thanhtien}</p></td>
+    </tr>
+       </#list>
+    </table>
+      <table  width ="100%"  align = 'middle'>
+          <tr>
+         <td width="63%"  align="right" border ="0.1pt solid black" vertical-align= 'middle' > <p style="text-align: center; "><b><i>CỘNG</i></b></p></td>
+         <td width="37%"  align="right" border ="0.1pt solid black" vertical-align= 'middle' > <p style="text-align: center; "><b>${jsonData.total_thanhtien}</b></p></td>
+    </tr>
+           <tr>
+         <td width="63%"  align="right" border ="0.1pt solid black" vertical-align= 'middle' > <p style="text-align: center; "><b><i>VAT</i></b></p></td>
+         <td width="37%"  align="right" border ="0.1pt solid black" vertical-align= 'middle' > <p style="text-align: center; "><b>${jsonData.vat}</b></p></td>
+    </tr>
+           <tr>
+         <td width="63%"  align="right" border ="0.1pt solid black" vertical-align= 'middle' > <p style="text-align: center; "><b><i>TỔNG</i></b></p></td>
+         <td width="37%"  align="right" border ="0.1pt solid black" vertical-align= 'middle' > <p style="text-align: center; "><b>${jsonData.total}</b></p></td>
+    </tr>
+    </table>
+             
+     <table  width ="100%">
+                <tr>
+            <td align ="left" width="100%" padding-top="10px" ><p>Giao Nhận Vận Chuyển: </p></td>
+        </tr>
+            <tr>
+            <td align ="left" width="100%"><p>PT Thanh Toán:  </p></td>
+        </tr>
+         <tr>
+            <td align ="left" width="100%"><p>Các Yêu Cầu Khác: </p></td>
+        </tr>
+         <tr>
+            <td align ="left" width="100%" padding-top="20px"><p>Ngày đặt hàng:  ${jsonData.trandate}</p></td>
+        </tr>
+        </table>
+    <table width="100%" padding-top="10px">
+         <tr font-size="13pt">
+	 <td  align="center"  width="50%"> <p style="text-align: center;"><b>Người Đặt Hàng</b></p></td>
+     <td  align="center" width="50%"><p style="text-align: center;"><b>Duyệt Mua Hàng</b></p></td>
+    </tr>
+       <tr font-size="13pt" padding-top="50px">
+	 <td  align="center"  width="50%"> <p style="text-align: center;"><b>${jsonData.emp_legal_name}</b></p></td>
+     <td  align="center" width="50%"><p style="text-align: center;"><b></b></p></td>
+    </tr>
+  </table>
+</body>
+</pdf>

@@ -1,0 +1,15 @@
+<deploy>
+<!--    <files>-->
+<!--        <path>~/FileCabinet/*</path>-->
+<!--    </files>-->
+    <objects>
+        <path>~/Objects/printDemo/custtmpl_scv_don_dat_hang.template.xml</path>
+        <path>~/Objects/printDemo/custtmpl_scv_don_dat_hang.xml</path>
+    </objects>
+<!--    <configuration>-->
+<!--        <path>~/AccountConfiguration/*</path>-->
+<!--    </configuration>-->
+<!--    <translationimports>-->
+<!--        <path>~/Translations/*</path>-->
+<!--    </translationimports>-->
+</deploy>

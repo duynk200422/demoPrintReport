@@ -1,0 +1,9 @@
+<advancedpdftemplate scriptid="custtmpl_scv_don_dat_hang" standard="STDTMPLUKVENDPYMT">
+  <description></description>
+  <displaysourcecode>T</displaysourcecode>
+  <isinactive>F</isinactive>
+  <preferred>F</preferred>
+  <printtype>TRANSACTION</printtype>
+  <title>SCV ĐƠN DẶT HÀNG</title>
+  <trantype>VENDPYMT</trantype>
+</advancedpdftemplate>

@@ -1,0 +1,9 @@
+<advancedpdftemplate scriptid="custtmpl_scv_demo_print_rp" standard="STDTMPLSALESORD">
+  <description></description>
+  <displaysourcecode>T</displaysourcecode>
+  <isinactive>F</isinactive>
+  <preferred>T</preferred>
+  <printtype>TRANSACTION</printtype>
+  <title>SCV Demo Print Report From Form</title>
+  <trantype>SALESORD</trantype>
+</advancedpdftemplate>
